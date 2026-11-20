@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover SkyNest Co-Living Spaces, a modern co-living company in Singapore for young professionals, digital nomads and international students.">
+
+  <title>SkyNest Co-Living Spaces | Home</title>
+
+  <!-- Embedded CSS -->
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #111111;
+      background-color: #fcfcfc;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Keyboard accessibility */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 12px;
+      padding: 10px;
+      background-color: #ffffff;
+      color: #111111;
+      z-index: 10;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid #1a1a1a;
+      outline-offset: 4px;
+    }
+
+    header a:focus-visible,
+    nav a:focus-visible {
+      outline-color: #1a1a1a;
+    }
+
+    /* Header */
+    header {
+      padding: 24px 0;
+      background-color: #ffffff;
+      color: #111111;
+      text-align: center;
+    }
+
+    .site-name { margin: 0; font-size: 30px; font-weight: bold; }
+    .tagline { margin: 5px 0 0; color: #444444; }
+
+    /* Navigation */
+    nav { background-color: #f7f7f7; border-bottom: 1px solid #e3e3e3; }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 12px 0;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 10px 16px;
+      border-radius: 5px;
+      color: #111111;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      background-color: #1a1a1a;
+      color: #ffffff;
+    }
+
+    /* Headings */
+    h1 { margin: 0 0 18px; font-size: 38px; line-height: 1.2; color: #111111; }
+    h2 { margin-top: 0; font-size: 28px; line-height: 1.3; color: #111111; }
+    h3 { margin-top: 0; color: #111111; }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #222222;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .page-intro { padding: 48px 0; background-color: #f1f1f1; }
+    .page-intro p { max-width: 800px; margin: 0; }
+
+    .section { padding: 48px 0; }
+    .white-section { background-color: #ffffff; }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .card {
+      padding: 24px;
+      background-color: #ffffff;
+      border: 1px solid #e4e4e4;
+      border-radius: 10px;
+    }
+
+    .white-section .card { background-color: #fafafa; }
+    .card p:last-child { margin-bottom: 0; }
+    .card ul { padding-left: 20px; margin-bottom: 0; }
+    .card li { margin-bottom: 8px; }
+
+    /* Buttons are links styled with CSS */
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 22px;
+      border-radius: 6px;
+      background-color: #1a1a1a;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .button:hover { background-color: #333333; }
+
+    /* Enquiry section */
+    .enquiry {
+      padding: 38px 24px;
+      background-color: #f1f1f1;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .enquiry p { max-width: 750px; margin: 0 auto 12px; }
+
+    /* Footer */
+    footer {
+      padding: 26px 0;
+      background-color: #f0f0f0;
+      color: #111111;
+      text-align: center;
+    }
+
+    footer p { margin: 5px 0; }
+    .footer-note { font-size: 14px; color: #444444; }
+
+    .hero { padding: 48px 0; background-color: #f1f1f1; }
+    .hero-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 32px; }
+    figure { margin: 0; }
+    .page-image { display: block; width: 100%; height: auto; border-radius: 12px; }
+    figcaption { margin-top: 8px; font-size: 14px; color: #333333; }
+    .section-intro { max-width: 750px; margin-bottom: 24px; }
+    .cards { margin-top: 0; }
+    .card p { margin-bottom: 0; }
+    .option-list { padding-left: 22px; }
+    .option-list li { margin-bottom: 12px; }
+    .enquiry p { max-width: 700px; margin: 0 auto; }
+
+    @media (max-width: 768px) {
+      .cards, .two-columns, .hero-layout { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+      .site-name { font-size: 26px; }
+      .page-intro, .section, .hero { padding: 32px 0; }
+      .nav-links a { padding: 10px 12px; }
+    }
+
+    /* Modern touches */
+    body { font-family: "Segoe UI", system-ui, -apple-system, Arial, Helvetica, sans-serif; }
+    h1, h2 { letter-spacing: -0.5px; }
+    header { border-bottom: 1px solid #e3e3e3; }
+    footer { border-top: 1px solid #e3e3e3; }
+    .nav-links a { border-radius: 999px; transition: background-color 0.2s ease, color 0.2s ease; }
+    .card, .facility-card, .guide-section, .form-card {
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover, .facility-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+    }
+    .button, .submit-button, .reset-button { border-radius: 999px; transition: background-color 0.2s ease; }
+    .enquiry, .information-box, .rooms, .page-image { border-radius: 16px; }
+    .page-image { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Website header -->
+  <header>
+    <div class="container">
+      <p class="site-name">SkyNest Co-Living Spaces</p>
+      <p class="tagline">Space to live, study and connect in Singapore</p>
+    </div>
+  </header>
+
+  <!-- Navigation menu -->
+  <nav aria-label="Main navigation">
+    <div class="container">
+      <ul class="nav-links">
+        <li>
+          <a href="index.html" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="about.html">About Us</a>
+        </li>
+        <li>
+          <a href="facilities.html">Facilities</a>
+        </li>
+        <li>
+          <a href="guide.html">Resident Guide</a>
+        </li>
+        <li>
+          <a href="contact.html">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="hero">
+      <div class="container hero-layout">
+
+        <div>
+          <p class="eyebrow">Welcome to SkyNest Co-Living Spaces</p>
+
+          <h1>Find your perfect stay with us!</h1>
+
+          <p>
+            Flexible short-term and long-term accommodation in
+            Singapore for young professionals, digital nomads
+            and international students.
+          </p>
+
+          <a class="button" href="about.html">Discover SkyNest</a>
+        </div>
+
+        <figure>
+          <img
+            src="images/skyline.jpg"
+            alt="Singapore skyline at dusk with city towers across the bay"
+            class="page-image"
+          >
+          <figcaption>
+            Illustrative image. SkyNest Co-Living Spaces is a fictional provider.
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-intro">
+          <h2>Designed around your everyday life</h2>
+        </div>
+
+        <div class="cards">
+
+          <article class="card">
+            <h3>Arrive and settle in</h3>
+            <p>Fully furnished private rooms with high-speed Wi-Fi.</p>
+          </article>
+
+          <article class="card">
+            <h3>Make time to focus</h3>
+            <p>Co-working spaces and study pods.</p>
+          </article>
+
+          <article class="card">
+            <h3>Connect with others</h3>
+            <p>Social lounge and weekly community events.</p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section white-section">
+      <div class="container">
+        <h2>A stay that suits your plans</h2>
+
+        <ul class="option-list">
+          <li><strong>Premium Stay:</strong> Private studio apartment.</li>
+          <li><strong>Standard Stay:</strong> Private bedroom in a shared apartment.</li>
+          <li><strong>Short-Term Stay:</strong> Flexible booking (1&ndash;4 weeks).</li>
+          <li><strong>Custom Packages:</strong> For corporate bookings, long-term stays or accessibility needs.</li>
+        </ul>
+
+        <a class="button" href="guide.html">Read the Resident Guide</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="enquiry">
+          <h2>Planning your next move?</h2>
+          <p>Contact us to arrange your stay.</p>
+          <a class="button" href="contact.html">Make an Enquiry</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Website footer -->
+  <footer>
+    <div class="container">
+      <p><strong>SkyNest Co-Living Spaces</strong> | Singapore</p>
+    </div>
+  </footer>
+
+</body>
+</html>
